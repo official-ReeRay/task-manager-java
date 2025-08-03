@@ -25,10 +25,10 @@ public class TaskManager extends JFrame {
         taskListModel = new DefaultListModel<>();
         taskList = new JList<>(taskListModel);
 
-        // Tabbed Pane
+        
         JTabbedPane tabbedPane = new JTabbedPane();
 
-        // --- Manage Tasks Tab ---
+        
         JPanel managePanel = new JPanel(new BorderLayout());
 
         JScrollPane taskListScrollPane = new JScrollPane(taskList);
@@ -63,7 +63,7 @@ public class TaskManager extends JFrame {
         managePanel.add(taskListScrollPane, BorderLayout.CENTER);
         managePanel.add(southPanel, BorderLayout.SOUTH);
 
-        // --- Show Tasks Tab ---
+        
         JPanel showPanel = new JPanel(new BorderLayout());
         showTasksArea = new JTextArea();
         showTasksArea.setEditable(false);
@@ -71,11 +71,11 @@ public class TaskManager extends JFrame {
         JScrollPane showScrollPane = new JScrollPane(showTasksArea);
         showPanel.add(showScrollPane, BorderLayout.CENTER);
 
-        // Add tabs
+        
         tabbedPane.addTab("Manage Tasks", managePanel);
         tabbedPane.addTab("Show Tasks", showPanel);
 
-        // Add listener to update the "Show Tasks" tab when selected
+       
         tabbedPane.addChangeListener(e -> {
             if (tabbedPane.getSelectedIndex() == 1) {
                 updateShowTasksArea();
